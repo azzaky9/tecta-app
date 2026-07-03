@@ -4,7 +4,8 @@ import { execSync } from 'child_process';
 import { RPC_URL, NETWORK_PASSPHRASE } from '../lib/payroll-sdk';
 import * as stellarSdk from '@stellar/stellar-sdk';
 
-const HR_SECRET = '***REMOVED-LEAKED-SECRET***';
+if (!process.env.HR_SECRET) throw new Error("Set HR_SECRET env var to run this script.");
+const HR_SECRET = process.env.HR_SECRET!;
 const VERIFIER_ID = 'CABPT2QO54HVAH5VWTLT3QZ3VXWNK2ZY6J2VZUK42SZHWXSWZO2ODPTK';
 const TOKEN_ID = 'CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC';
 const WASM_PATH = '/home/azxky9/hackathon/tecta-wasm/target/wasm32v1-none/release/shielded_payroll.wasm';

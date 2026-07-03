@@ -6,7 +6,8 @@ function parseAddress(str: string) {
 }
 
 async function main() {
-  const secret = "***REMOVED-LEAKED-SECRET***";
+  if (!process.env.HR_SECRET) throw new Error("Set HR_SECRET env var to run this script.");
+  const secret = process.env.HR_SECRET!;
   const keypair = stellarSdk.Keypair.fromSecret(secret);
   const address = keypair.publicKey();
   console.log("Admin/HR Address:", address);

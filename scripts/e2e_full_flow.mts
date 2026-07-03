@@ -15,7 +15,8 @@ import {
   getRecipientFieldElement, PAYROLL_CONTRACT_ID, RPC_URL, NETWORK_PASSPHRASE,
 } from '../lib/payroll-sdk';
 
-const HR_SECRET = '***REMOVED-LEAKED-SECRET***';
+if (!process.env.HR_SECRET) throw new Error("Set HR_SECRET env var to run this script.");
+const HR_SECRET = process.env.HR_SECRET!;
 const RECIPIENT = 'GAMIBC4Q6BSBZPQYN74P6UUOK4NCHNDTMWYMAUJIY6QX7W6JNS64WOHT';
 const RECIPIENT_SECRET = process.env.RECIPIENT_SECRET; // employee_test key; falls back to HR as tx source
 

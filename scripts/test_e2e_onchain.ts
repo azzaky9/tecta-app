@@ -16,7 +16,8 @@ import * as stellarSdk from '@stellar/stellar-sdk';
 import { Buffer } from 'buffer';
 
 async function main() {
-  const hrSecret = "***REMOVED-LEAKED-SECRET***";
+  if (!process.env.HR_SECRET) throw new Error("Set HR_SECRET env var to run this script.");
+  const hrSecret = process.env.HR_SECRET!;
   const hrKeypair = stellarSdk.Keypair.fromSecret(hrSecret);
   const hrAddress = hrKeypair.publicKey();
   console.log("HR Address:", hrAddress);

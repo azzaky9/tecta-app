@@ -7,7 +7,8 @@ import * as stellarSdk from '@stellar/stellar-sdk';
 import { Buffer } from 'buffer';
 
 const PAYROLL_ID = 'CAFRROTQNRVUQO6XBH4QFH57QAALGQXK336GV2BZR6HEITNLKWJSHLX3';
-const HR_SECRET = '***REMOVED-LEAKED-SECRET***';
+if (!process.env.HR_SECRET) throw new Error("Set HR_SECRET env var to run this script.");
+const HR_SECRET = process.env.HR_SECRET!;
 
 async function waitForTx(server: stellarSdk.rpc.Server, hash: string): Promise<void> {
   while (true) {

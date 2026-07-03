@@ -35,7 +35,8 @@ const VERIFIER_ID     = 'CABPT2QO54HVAH5VWTLT3QZ3VXWNK2ZY6J2VZUK42SZHWXSWZO2ODPT
 const PAYROLL_ID      = 'CAFRROTQNRVUQO6XBH4QFH57QAALGQXK336GV2BZR6HEITNLKWJSHLX3';
 
 // HR signing keypair - must be the admin of the payroll contract
-const HR_SECRET = '***REMOVED-LEAKED-SECRET***';
+if (!process.env.HR_SECRET) throw new Error("Set HR_SECRET env var to run this script.");
+const HR_SECRET = process.env.HR_SECRET!;
 
 // Payroll batch
 const EMPLOYEES = [
