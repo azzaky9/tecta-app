@@ -1,0 +1,17 @@
+<svg viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="t-cutout">
+      <rect width="200" height="200" fill="white"/>
+      <!-- The 'T' shape cut out from the center -->
+      <rect x="60" y="110" width="80" height="18" rx="2" fill="black"/>
+      <rect x="91" y="110" width="18" height="45" rx="2" fill="black"/>
+    </mask>
+  </defs>
+  
+  <g mask="url(#t-cutout)">
+    <!-- Lock Shackle / Loop -->
+    <path d="M 65 90 V 65 A 35 35 0 0 1 135 65 V 90" stroke="black" stroke-width="20" fill="none"/>
+    <!-- Lock Body -->
+    <rect x="40" y="85" width="120" height="85" rx="16" fill="black"/>
+  </g>
+</svg>

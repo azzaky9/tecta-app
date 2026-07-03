@@ -1,26 +1,261 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Sentient Font Face Declarations */
+@font-face {
+  font-family: 'Sentient-Variable';
+  src: url('/fonts/WEB/fonts/Sentient-Variable.woff2') format('woff2'),
+       url('/fonts/WEB/fonts/Sentient-Variable.woff') format('woff'),
+       url('/fonts/WEB/fonts/Sentient-Variable.ttf') format('truetype');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
 }
+@font-face {
+  font-family: 'Sentient-Bold';
+  src: url('/fonts/WEB/fonts/Sentient-Bold.woff2') format('woff2'),
+       url('/fonts/WEB/fonts/Sentient-Bold.woff') format('woff'),
+       url('/fonts/WEB/fonts/Sentient-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sentient-Regular';
+  src: url('/fonts/WEB/fonts/Sentient-Regular.woff2') format('woff2'),
+       url('/fonts/WEB/fonts/Sentient-Regular.woff') format('woff'),
+       url('/fonts/WEB/fonts/Sentient-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
+  --font-heading: 'Sentient-Variable', 'Sentient-Bold', Georgia, serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-on-primary: var(--primary-foreground);
+  --color-on-surface: var(--foreground);
+  --color-on-surface-variant: var(--muted-foreground);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-zkp-payload-bg: var(--zkp-payload-bg);
+  --color-zkp-payload-text: var(--zkp-payload-text);
+  --color-zkp-payload-accent: var(--zkp-payload-accent);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Custom Font Families */
+  --font-headline-lg: 'Sentient-Bold', 'Sentient-Variable', Georgia, serif;
+  --font-headline-md: 'Sentient-Bold', 'Sentient-Variable', Georgia, serif;
+  --font-headline-sm: 'Sentient-Bold', 'Sentient-Variable', Georgia, serif;
+  --font-body-lg: var(--font-sans);
+  --font-body-md: var(--font-sans);
+  --font-label-caps: var(--font-sans);
+  --font-mono-data: var(--font-mono);
+
+  /* Custom Font Sizes and Properties */
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 40px;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 600;
+
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--letter-spacing: -0.01em;
+  --text-headline-md--font-weight: 600;
+
+  --text-headline-sm: 20px;
+  --text-headline-sm--line-height: 28px;
+  --text-headline-sm--font-weight: 700;
+
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 24px;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-md: 14px;
+  --text-body-md--line-height: 20px;
+  --text-body-md--font-weight: 400;
+
+  --text-label-caps: 12px;
+  --text-label-caps--line-height: 16px;
+  --text-label-caps--letter-spacing: 0.05em;
+  --text-label-caps--font-weight: 700;
+
+  --text-mono-data: 14px;
+  --text-mono-data--line-height: 20px;
+  --text-mono-data--font-weight: 400;
+
+  /* Custom Spacing Tokens */
+  --spacing-stack-sm: 8px;
+  --spacing-stack-md: 16px;
+  --spacing-stack-lg: 32px;
+  --spacing-gutter: 16px;
+  --spacing-container-margin: 24px;
+
+  /* StarBorder animation */
+  --animate-star-movement-bottom: star-movement-bottom linear infinite alternate;
+  --animate-star-movement-top: star-movement-top linear infinite alternate;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes star-movement-bottom {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-100%, 0%);
+    opacity: 0;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes star-movement-top {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100%, 0%);
+    opacity: 0;
+  }
+}
+
+:root {
+  --background: #f5f5f7;
+  --foreground: #1b1b1d;
+  --card: #ffffff;
+  --card-foreground: #1b1b1d;
+  --popover: #ffffff;
+  --popover-foreground: #1b1b1d;
+  --primary: #121212;
+  --primary-foreground: #ffffff;
+  --secondary: #505f76;
+  --secondary-foreground: #ffffff;
+  --muted: #f5f5f7;
+  --muted-foreground: #45464d;
+  --accent: #eae7e9;
+  --accent-foreground: #1b1b1d;
+  --destructive: #ba1a1a;
+  --destructive-foreground: #ffffff;
+  --border: #c6c6cd;
+  --input: #c6c6cd;
+  --ring: #121212;
+  --chart-1: #121212;
+  --chart-2: #505f76;
+  --chart-3: #7c839b;
+  --chart-4: #dec29a;
+  --chart-5: #ba1a1a;
+  --radius: 0.625rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1b1b1d;
+  --sidebar-primary: #121212;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eae7e9;
+  --sidebar-accent-foreground: #1b1b1d;
+  --sidebar-border: #c6c6cd;
+  --sidebar-ring: #121212;
+  --zkp-payload-bg: #131b2e;
+  --zkp-payload-text: #bec6e0;
+  --zkp-payload-accent: #7c839b;
+}
+
+/* Forced to Light Mode Colors under dark variant */
+.dark {
+  --background: #f5f5f7;
+  --foreground: #1b1b1d;
+  --card: #ffffff;
+  --card-foreground: #1b1b1d;
+  --popover: #ffffff;
+  --popover-foreground: #1b1b1d;
+  --primary: #121212;
+  --primary-foreground: #ffffff;
+  --secondary: #505f76;
+  --secondary-foreground: #ffffff;
+  --muted: #f5f5f7;
+  --muted-foreground: #45464d;
+  --accent: #eae7e9;
+  --accent-foreground: #1b1b1d;
+  --destructive: #ba1a1a;
+  --destructive-foreground: #ffffff;
+  --border: #c6c6cd;
+  --input: #c6c6cd;
+  --ring: #121212;
+  --chart-1: #121212;
+  --chart-2: #505f76;
+  --chart-3: #7c839b;
+  --chart-4: #dec29a;
+  --chart-5: #ba1a1a;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1b1b1d;
+  --sidebar-primary: #121212;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eae7e9;
+  --sidebar-accent-foreground: #1b1b1d;
+  --sidebar-border: #c6c6cd;
+  --sidebar-ring: #121212;
+  --zkp-payload-bg: #131b2e;
+  --zkp-payload-text: #bec6e0;
+  --zkp-payload-accent: #7c839b;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+  button, [role="button"] {
+    cursor: pointer;
+  }
+}
+
+/* Hide scrollbars for Stellar Wallets Kit modal to ensure a clean UI */
+.stellar-wallets-kit section {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+}
+
+.stellar-wallets-kit section::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
 }
