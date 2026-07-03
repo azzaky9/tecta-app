@@ -1,8 +1,14 @@
 # Tecta — Frontend
 
-Next.js frontend for **Tecta**, a confidential ZK payroll settlement layer on Stellar/Soroban. This app is the HR dashboard and the public employee claim page — it does **not** implement the ZK circuit or the smart contracts themselves. Those live in a separate repo: **[azzaky9/tecta-zk](https://github.com/azzaky9/tecta-zk)**.
+Next.js frontend for **Tecta**, a confidential ZK payroll settlement layer on Stellar/Soroban. This app is the HR dashboard and the public employee claim page — it does **not** implement the ZK circuit or the Soroban smart contracts themselves.
 
-If you haven't deployed the contracts yet, do that first — see [tecta-zk's `USAGE.md`](https://github.com/azzaky9/tecta-zk/blob/master/USAGE.md) for the full step-by-step (identities, funding, build, deploy, initialize). Everything below assumes you already have a deployed, initialized `PAYROLL` contract and a deployed `VERIFIER` contract.
+> ### 🔗 Smart Contracts & ZK Circuit: [github.com/azzaky9/tecta-zk](https://github.com/azzaky9/tecta-zk)
+>
+> The Noir circuit, the `ShieldedPayroll`/`Verifier` Soroban contracts, the full architecture writeup, and a copy-pasteable step-by-step guide for building, deploying, and invoking the contracts all live there:
+> - **[`PROJECT-DETAILS.md`](https://github.com/azzaky9/tecta-zk/blob/master/PROJECT-DETAILS.md)** — architecture, Poseidon hashing, gasless claims explained, Mermaid diagram
+> - **[`USAGE.md`](https://github.com/azzaky9/tecta-zk/blob/master/USAGE.md)** — identities, testnet funding, build, deploy, initialize, disburse, prove, claim, one command at a time
+>
+> **Deploy the contracts from that repo first.** This app is a client for an already-deployed instance — it has nothing to talk to until `PAYROLL` and `VERIFIER` contract IDs exist on testnet.
 
 ---
 
@@ -54,6 +60,12 @@ flowchart TB
 ---
 
 ## Environment Setup
+
+**Don't forget this step** — the app builds and runs fine without it, then fails silently or points at the wrong contracts. Copy the example and fill it in:
+
+```bash
+cp .env.example .env
+```
 
 Two files, both gitignored:
 
