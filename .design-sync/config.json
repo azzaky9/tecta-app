@@ -1,0 +1,224 @@
+{
+  "pkg": "tecta",
+  "globalName": "Tecta",
+  "projectId": "424c9679-119b-4302-a483-dd99f1bd3d04",
+  "shape": "package",
+  "srcDir": "components/ui",
+  "tsconfig": "tsconfig.json",
+  "cssEntry": ".design-sync/.cache/compiled-tailwind.css",
+  "readmeHeader": ".design-sync/conventions.md",
+  "extraFonts": [
+    ".design-sync/fonts-face.css"
+  ],
+  "componentSrcMap": {
+    "CanvasRevealEffect": null,
+    "FaultyTerminal": null,
+    "CardSpotlight": null,
+    "CardSpotlightDemo": null
+  },
+  "libOverrides": {
+    "source-kit.mjs": "synth-entry mode has no exclude-glob; drops canvas-reveal-effect/faulty-terminal/card-spotlight/card-spotlight-demo.tsx (@react-three/fiber -> scheduler leak breaks the whole shared bundle) from the entry itself"
+  },
+  "overrides": {
+    "DropdownMenu": {
+      "cardMode": "single",
+      "viewport": "320x420"
+    },
+    "DropdownMenuPortal": {
+      "cardMode": "single",
+      "viewport": "320x420"
+    },
+    "DropdownMenuTrigger": {
+      "cardMode": "single",
+      "viewport": "320x420"
+    },
+    "DropdownMenuContent": {
+      "cardMode": "single",
+      "viewport": "320x420"
+    },
+    "DropdownMenuGroup": {
+      "cardMode": "single",
+      "viewport": "320x420"
+    },
+    "DropdownMenuLabel": {
+      "cardMode": "single",
+      "viewport": "320x420"
+    },
+    "DropdownMenuItem": {
+      "cardMode": "single",
+      "viewport": "320x420"
+    },
+    "DropdownMenuCheckboxItem": {
+      "cardMode": "single",
+      "viewport": "320x420"
+    },
+    "DropdownMenuRadioGroup": {
+      "cardMode": "single",
+      "viewport": "320x420"
+    },
+    "DropdownMenuRadioItem": {
+      "cardMode": "single",
+      "viewport": "320x420"
+    },
+    "DropdownMenuSeparator": {
+      "cardMode": "single",
+      "viewport": "320x420"
+    },
+    "DropdownMenuShortcut": {
+      "cardMode": "single",
+      "viewport": "320x420"
+    },
+    "DropdownMenuSub": {
+      "cardMode": "single",
+      "viewport": "320x420"
+    },
+    "DropdownMenuSubTrigger": {
+      "cardMode": "single",
+      "viewport": "320x420"
+    },
+    "DropdownMenuSubContent": {
+      "cardMode": "single",
+      "viewport": "320x420"
+    },
+    "Sheet": {
+      "cardMode": "single",
+      "viewport": "420x420"
+    },
+    "SheetTrigger": {
+      "cardMode": "single",
+      "viewport": "420x420"
+    },
+    "SheetClose": {
+      "cardMode": "single",
+      "viewport": "420x420"
+    },
+    "SheetContent": {
+      "cardMode": "single",
+      "viewport": "420x420"
+    },
+    "SheetHeader": {
+      "cardMode": "single",
+      "viewport": "420x420"
+    },
+    "SheetFooter": {
+      "cardMode": "single",
+      "viewport": "420x420"
+    },
+    "SheetTitle": {
+      "cardMode": "single",
+      "viewport": "420x420"
+    },
+    "SheetDescription": {
+      "cardMode": "single",
+      "viewport": "420x420"
+    },
+    "Tooltip": {
+      "cardMode": "single",
+      "viewport": "260x140"
+    },
+    "TooltipContent": {
+      "cardMode": "single",
+      "viewport": "260x140"
+    },
+    "TooltipProvider": {
+      "cardMode": "single",
+      "viewport": "260x140"
+    },
+    "TooltipTrigger": {
+      "cardMode": "single",
+      "viewport": "260x140"
+    },
+    "Sidebar": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarContent": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarFooter": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarGroup": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarGroupAction": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarGroupContent": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarGroupLabel": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarHeader": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarInput": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarInset": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarMenu": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarMenuAction": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarMenuBadge": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarMenuButton": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarMenuItem": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarMenuSkeleton": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarMenuSub": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarMenuSubButton": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarMenuSubItem": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarProvider": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarRail": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarSeparator": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    },
+    "SidebarTrigger": {
+      "cardMode": "single",
+      "viewport": "900x520"
+    }
+  }
+}
