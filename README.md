@@ -2,6 +2,13 @@
 
 Next.js frontend for **Tecta**, a confidential ZK payroll settlement layer on Stellar/Soroban. This app is the HR dashboard and the public employee claim page — it does **not** implement the ZK circuit or the Soroban smart contracts themselves.
 
+**Live on Stellar Testnet:**
+
+| Contract | ID |
+|---|---|
+| `ShieldedPayroll` | [`CAFRROTQNRVUQO6XBH4QFH57QAALGQXK336GV2BZR6HEITNLKWJSHLX3`](https://stellar.expert/explorer/testnet/contract/CAFRROTQNRVUQO6XBH4QFH57QAALGQXK336GV2BZR6HEITNLKWJSHLX3) |
+| `Verifier` | [`CABPT2QO54HVAH5VWTLT3QZ3VXWNK2ZY6J2VZUK42SZHWXSWZO2ODPTK`](https://stellar.expert/explorer/testnet/contract/CABPT2QO54HVAH5VWTLT3QZ3VXWNK2ZY6J2VZUK42SZHWXSWZO2ODPTK) |
+
 > ### 🔗 Smart Contracts & ZK Circuit: [github.com/azzaky9/tecta-zk](https://github.com/azzaky9/tecta-zk)
 >
 > The Noir circuit, the `ShieldedPayroll`/`Verifier` Soroban contracts, the full architecture writeup, and a copy-pasteable step-by-step guide for building, deploying, and invoking the contracts all live there:
